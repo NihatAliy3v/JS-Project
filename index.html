@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/scss/main.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar">
+                        <div class="logo">
+                            <a class="logo-link" href="">
+                                <img src="./assets/images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <ul class="navigation">
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projects">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">QA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="user">
+                            <a class="user-link" href="" onclick="hiSay(event)">
+                                <img src="./assets/images/main-img.jpg" alt="">
+                            </a>
+                            <div class="user-dropdown">
+                                <div class="dropDown">
+                                    <p>Hi there!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="homeMain">
+            <div class="container">
+                <div class="row">
+                    <div class="main-words">
+                        <h1 class="title">Hello, I'm 
+                            <span class="name">Nihat</span> 
+                            <span class="surname">Aliyev</span>
+                        </h1>
+                        <p class="description">
+                            A passionate Web Developer from New York!
+                        </p>
+                        <div class="contact">
+                            <a class="contact-btn" href="">
+                                CONTACT ME
+                            </a>
+                            <div class="social">
+                                <a class="social-link" href="">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a class="social-link" href="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a class="social-link" href="">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a class="social-link" href="">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="person-photo">
+                        <div class="img">
+                            <img  src="./assets/images/main-img.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section id="projects">
+            <div class="container">
+                <div class="row">
+                    <h2 class="title">
+                        Projects
+                    </h2>
+                    <div class="projects-container">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">Slide 1</div>
+                              <div class="swiper-slide">Slide 2</div>
+                              <div class="swiper-slide">Slide 3</div>
+                              <div class="swiper-slide">Slide 4</div>
+                              <div class="swiper-slide">Slide 5</div>
+                              <div class="swiper-slide">Slide 6</div>
+                              <div class="swiper-slide">Slide 7</div>
+                              <div class="swiper-slide">Slide 8</div>
+                              <div class="swiper-slide">Slide 9</div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/7254eb5e7b.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>

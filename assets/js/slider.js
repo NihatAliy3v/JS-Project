@@ -1,10 +1,13 @@
-var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
+var swiper = new Swiper(".swiper", {
+    spaceBetween: 50,
     centeredSlides: true,
     loop:true,
     speed:1000,
+    slidesPerView:3,
+    slidesPerGroup:3,
+    effect:"coverflow",
     autoplay: {
-      delay: 3000,
+      delay: 2000,
       disableOnInteraction: false,
     },
     pagination: {

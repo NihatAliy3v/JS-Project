@@ -36,7 +36,6 @@
                             &:hover{
                                 color: #fd562a;
                             }
-
                         }
                     }
                 }
@@ -236,6 +235,110 @@
                     .swiper-button-prev{
                         color: #fd562a;
                     }
+                }
+            }
+        }
+    }
+}
+
+#skills{
+    background: rgb(64,40,25);
+    background: linear-gradient(45deg, rgba(64,40,25,1) 0%, rgba(33,15,6,1) 24%, rgba(24,23,23,1) 100%);
+    padding: 120px 0 100px;
+    .container{
+        .row{
+            .title{
+                @include title;
+                margin-bottom: 20px;
+            }
+            .skills-tab{
+                position: relative;
+                height: 480px;
+                .skills-btns{
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-bottom: 40px;
+                    .btn{
+                        background-color: transparent;
+                        color: #fff;
+                        border: none;
+                        outline: none;
+                        font-size: 18px;
+                        cursor: pointer;
+                        width: 100px;
+                        &::after{
+                            transition: all .3s;
+                            content: "";
+                            display: block;
+                            width: 0px;
+                            height: 2px;
+                            margin-top: 4px;
+                        }
+
+                    }
+                    .active{
+                        &::after{
+                            content: "";
+                            display: block;
+                            width: 100px;
+                            height: 2px;
+                            background: red;
+                        }
+                    }
+                }
+                .skill-item{
+                    color: #fff;
+                    letter-spacing: 2px;
+                    .skill-list{
+                        top: 90px;
+                        left: 100px;
+                        position: absolute;
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: translateX(-100%);
+                        
+                        transition: transform .3s,all .2s;
+                        .list-item{
+                            font-size: 20px;
+                            margin-bottom: 10px;
+                            list-style-type: circle;
+                        }
+                    }
+                    .active{
+
+                        visibility: visible;
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#accordion{
+    .container{
+        .row{
+            .boxes{
+                display: flex;
+                flex-direction: column;
+                .box-item{
+                    width: 600px;
+                    margin: auto;
+                    height: 60px;
+                    background-color: red;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    border:1px solid #fff;
+                    cursor: pointer;
+                }
+                .active{
+                    background-color: blue;
                 }
             }
         }

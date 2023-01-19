@@ -5,7 +5,6 @@ var swiper = new Swiper(".swiper", {
     speed:1000,
     slidesPerView:3,
     slidesPerGroup:3,
-    effect:"coverflow",
     autoplay: {
       delay: 2000,
       disableOnInteraction: false,

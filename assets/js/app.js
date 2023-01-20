@@ -4,6 +4,8 @@ function hiSay(event){
     event.preventDefault();
     dropDown.classList.toggle("active");
 }
+const user = document.querySelector(".user")
+
 window.onclick = function(event){
     if(!event.target.closest(".user")){
         dropDown.classList.remove("active");
@@ -54,12 +56,18 @@ btns.forEach((item)=>{
 //accordion
 
 const accItem = document.querySelectorAll(".box-item");
-
+const accContent = document.querySelectorAll(".content");
 accItem.forEach((item)=>{
     item.addEventListener("click",(e)=>{
-        accItem.forEach(item=>{
+        if(e.target.closest(".active")){
             item.classList.remove("active");
-        })
-        e.target.classList.add("active");
+            console.log(item);
+        }else{
+            accItem.forEach(item=>{
+                item.classList.remove("active");
+            })
+            item.classList.add("active");
+        }
+        
     })
-})
+});

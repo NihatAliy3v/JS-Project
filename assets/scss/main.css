@@ -450,6 +450,48 @@ html, body {
   opacity: 1;
 }
 
+#accordion {
+  background-color: #302925;
+  padding: 120px 0 100px;
+  height: 600px;
+}
+#accordion .container .row .title {
+  font-size: 38px;
+  margin-bottom: 24px;
+  color: #fff;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 40px;
+}
+#accordion .container .row .title::after {
+  content: "";
+  border: 8px solid transparent;
+  border-right-color: #fd562a;
+  border-bottom-color: #fd562a;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  left: -30px;
+}
+#accordion .container .row .title::before {
+  content: "";
+  border: 8px solid transparent;
+  border-left-color: #fd562a;
+  border-bottom-color: #fd562a;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  right: -30px;
+}
 #accordion .container .row .boxes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -458,26 +500,48 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 700px;
+  margin: auto;
 }
 #accordion .container .row .boxes .box-item {
-  width: 600px;
+  overflow: hidden;
+  width: 100%;
   margin: auto;
-  height: 60px;
-  background-color: red;
+  cursor: pointer;
+  position: relative;
+}
+#accordion .container .row .boxes .box-item .label {
   color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 10px;
-  border: 1px solid #fff;
-  cursor: pointer;
 }
-#accordion .container .row .boxes .active {
-  background-color: blue;
+#accordion .container .row .boxes .box-item .label::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  color: #fff;
+}
+#accordion .container .row .boxes .box-item .content {
+  height: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0;
+  color: #fff;
+}
+#accordion .container .row .boxes .active .label::after {
+  content: "-";
+}
+#accordion .container .row .boxes .active .content {
+  visibility: visible;
+  height: 100px;
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

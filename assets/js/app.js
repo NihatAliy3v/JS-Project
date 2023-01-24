@@ -74,19 +74,40 @@ accItem.forEach((item)=>{
 //contact
 
 const inputName = document.querySelector("#username");
-const email = document.querySelector("#email");
-const warning = document.querySelector(".warning-name");
 const btnSend = document.querySelector(".btn-send");
-console.log(btnSend);
+const warningName = document.querySelector(".warning-name");
 
 btnSend.classList.add("disable");
 inputName.addEventListener("keyup",function(e){
     e.preventDefault();
     if(inputName.value.length<=3){
-        warning.textContent="3den boyuk olmalidi";
+        warningName.textContent="3den boyuk olmalidi";
         btnSend.disabled=true;
     }else{
-        warning.textContent="";
+        warningName.innerHTML="&nbsp;";
+        btnSend.disabled=false;
+    }
+    if(btnSend.disabled){
+        btnSend.classList.add("disable");
+    }  else{
+        btnSend.classList.remove("disable");
+    } 
+    emptyCheck()
+});
+
+const email = document.querySelector("#email");
+const warningEmail = document.querySelector(".warning-email");
+email.addEventListener("keyup",function(e){
+    e.preventDefault();
+    let emLetter = email.value.split("").findIndex((letter)=>{
+        return letter=="@";
+    })
+    let count = email.value.split("").slice(emLetter).length;
+    if(count==1){
+        warningEmail.textContent="duzgun deyil";
+        btnSend.disabled=true;
+    }else{
+        warningEmail.innerHTML="&nbsp;";
         btnSend.disabled=false;
     }
     if(btnSend.disabled){
@@ -94,5 +115,34 @@ inputName.addEventListener("keyup",function(e){
     }else{
         btnSend.classList.remove("disable");
     }   
+    emptyCheck()
 });
 
+const messageBox = document.querySelector("#messageBox");
+const warningMessage = document.querySelector(".warning-message");
+
+messageBox.addEventListener("keyup",function(e){
+    e.preventDefault();
+    if(messageBox.value.length<=10){
+        warningMessage.textContent="10den boyuk olmalidi";
+        btnSend.disabled=true;
+    }else{
+        warningMessage.innerHTML="&nbsp;";
+        btnSend.disabled=false;
+    }
+    if(btnSend.disabled){
+        btnSend.classList.add("disable");
+    }  else{
+        btnSend.classList.remove("disable");
+    } 
+    emptyCheck()
+});
+
+
+function emptyCheck(){
+    if(inputName.value==""||email.value==""||messageBox.value==""){
+        btnSend.disabled=true;
+        btnSend.classList.add("disable");
+
+    }
+}

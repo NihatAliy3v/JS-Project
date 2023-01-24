@@ -35,11 +35,11 @@ function headerHandler(){
 
 const btns = document.querySelectorAll(".btn");
 const skillList = document.querySelectorAll(".skill-list");
-btns[0].classList.add("active");
-skillList[0].classList.add("active");
+const skillItem = document.querySelectorAll(".skill-list")
 btns.forEach((item)=>{
     item.addEventListener("click",function(e){
-        const dataTab = e.target.getAttribute("data-tab");
+        e.preventDefault();
+        let dataTab = e.target.getAttribute("data-tab");
         const skillItem = document.querySelector(dataTab);
         btns.forEach((element)=>{
             element.classList.remove("active");
@@ -47,11 +47,11 @@ btns.forEach((item)=>{
         skillList.forEach((element)=>{
             element.classList.remove("active");
         })
+        
         skillItem.classList.add("active");
         e.target.classList.add("active");
     })
 })
-
 
 //accordion
 
@@ -61,13 +61,38 @@ accItem.forEach((item)=>{
     item.addEventListener("click",(e)=>{
         if(e.target.closest(".active")){
             item.classList.remove("active");
-            console.log(item);
         }else{
             accItem.forEach(item=>{
                 item.classList.remove("active");
             })
             item.classList.add("active");
         }
-        
     })
 });
+
+
+//contact
+
+const inputName = document.querySelector("#username");
+const email = document.querySelector("#email");
+const warning = document.querySelector(".warning-name");
+const btnSend = document.querySelector(".btn-send");
+console.log(btnSend);
+
+btnSend.classList.add("disable");
+inputName.addEventListener("keyup",function(e){
+    e.preventDefault();
+    if(inputName.value.length<=3){
+        warning.textContent="3den boyuk olmalidi";
+        btnSend.disabled=true;
+    }else{
+        warning.textContent="";
+        btnSend.disabled=false;
+    }
+    if(btnSend.disabled){
+        btnSend.classList.add("disable");
+    }else{
+        btnSend.classList.remove("disable");
+    }   
+});
+

@@ -91,7 +91,11 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="hero-elements">
+                <img class="hero-element-1" src="./assets/images/hero-element-1.png" alt="">
+                <img class="hero-element-2" src="./assets/images/hero-element-2.png" alt="">
+                <img class="hero-element-4" src="./assets/images/hero-element-4.png" alt="">
+            </div>
         </section>
         <section id="projects">
             <div class="container">
@@ -151,11 +155,11 @@
                     <h2 class="title">Skills</h2>
                     <div class="skills-tab">
                         <div class="skills-btns">
-                            <button class="btn" data-tab="#soft">Soft</button>
+                            <button class="btn active" data-tab="#soft">Soft</button>
                             <button class="btn" data-tab="#hard">Hard</button>
                         </div>
                         <div class="skill-item">
-                            <ul class="skill-list" id="soft">
+                            <ul class="skill-list active" id="soft">
                                 <li class="list-item">
                                     Problem-solving skills and critical thinking
                                 </li>
@@ -256,6 +260,33 @@
                             </p>
                         </div>
                         <hr>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <h2 class="title">Contact Us</h2>
+
+                    <div class="form-container">
+                        <form class="form">
+                            <h3 class="title-form">Write me a message</h3>
+                            <div class="name-email">
+                                <div class="name-email-item">
+                                    <input type="text" name="username" id="username" placeholder="name*">
+                                    <p class="warning warning-name">&nbsp;</p>
+                                </div>
+                                <div class="name-email-item">
+                                    <input type="email" name="email" id="email" placeholder="email*" required>
+                                    <p class="warning warning-email">&nbsp;</p>
+                                </div>
+                            </div>
+                            <textarea name="mesageBox" id="messageBox" placeholder="Your message here*"></textarea>
+                            <p class="warning warning-message">&nbsp;</p>
+                            <button class="btn-send" disabled>Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>

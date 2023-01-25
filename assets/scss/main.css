@@ -711,6 +711,17 @@ html, body {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+#contact .container .row .form-container .form .name-email .name-email-item input.false-color {
+  border-color: red;
+  color: red;
+  -webkit-box-shadow: 0 0 10px red;
+          box-shadow: 0 0 10px red;
+}
+#contact .container .row .form-container .form .name-email .name-email-item input.true-color {
+  border-color: green;
+  -webkit-box-shadow: 0 0 10px green;
+          box-shadow: 0 0 10px green;
+}
 #contact .container .row .form-container .form .name-email .name-email-item input:focus {
   border-color: #fd562a;
 }
@@ -733,6 +744,14 @@ html, body {
   -webkit-transition: border 0.3s;
   transition: border 0.3s;
   resize: vertical;
+}
+#contact .container .row .form-container .form #messageBox.true-color {
+  border-color: green;
+  -webkit-box-shadow: 0 0 10px green;
+          box-shadow: 0 0 10px green;
+}
+#contact .container .row .form-container .form #messageBox:focus {
+  border-color: #fd562a;
 }
 #contact .container .row .form-container .form #messageBox:focus {
   border-color: #fd562a;

@@ -458,9 +458,19 @@
                                 border-radius: 4px;
                                 font-size: 16px;
                                 transition: all .3s;
+                                &.false-color{
+                                    border-color: red;
+                                    color: red;
+                                    box-shadow: 0 0 10px red;
+                                }
+                                &.true-color{
+                                    border-color: green;
+                                    box-shadow: 0 0 10px green;
+                                }
                                 &:focus{
                                     border-color: #fd562a;
                                 }
+                                
                             }
                             .warning{
                                 font-size: 12px;
@@ -482,6 +492,13 @@
                         font-size: 16px;
                         transition: border .3s;
                         resize: vertical;
+                        &.true-color{
+                            border-color: green;
+                            box-shadow: 0 0 10px green;
+                        }
+                        &:focus{
+                            border-color: #fd562a;
+                        }
                         &:focus{
                             border-color: #fd562a;
                         }

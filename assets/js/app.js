@@ -83,9 +83,13 @@ inputName.addEventListener("keyup",function(e){
     if(inputName.value.length<=3){
         warningName.textContent="3den boyuk olmalidi";
         btnSend.disabled=true;
+        inputName.classList.add("false-color");
+        inputName.classList.remove("true-color");
     }else{
         warningName.innerHTML="&nbsp;";
         btnSend.disabled=false;
+        inputName.classList.remove("false-color");
+        inputName.classList.add("true-color");
     }
     if(btnSend.disabled){
         btnSend.classList.add("disable");
@@ -93,22 +97,34 @@ inputName.addEventListener("keyup",function(e){
         btnSend.classList.remove("disable");
     } 
     emptyCheck()
+    falseCheck() 
 });
 
 const email = document.querySelector("#email");
 const warningEmail = document.querySelector(".warning-email");
 email.addEventListener("keyup",function(e){
     e.preventDefault();
-    let emLetter = email.value.split("").findIndex((letter)=>{
+    let inLetter = email.value.split("").findIndex((letter)=>{
         return letter=="@";
     })
-    let count = email.value.split("").slice(emLetter).length;
-    if(count==1){
+    let emLetter = email.value.split("").filter((letter)=>{
+        return letter=="@";
+    })
+    let countNext = email.value.split("").slice(inLetter);
+    let countPrevious = email.value.split("").slice(0,inLetter);
+    console.log(emLetter);
+    if(countNext.length==1||countPrevious.length==0||emLetter.length>1){
         warningEmail.textContent="duzgun deyil";
         btnSend.disabled=true;
+        emailCheck=true;
+        email.classList.add("false-color");
+        email.classList.remove("true-color");
     }else{
         warningEmail.innerHTML="&nbsp;";
         btnSend.disabled=false;
+        emailCheck=false;
+        email.classList.remove("false-color");
+        email.classList.add("true-color");
     }
     if(btnSend.disabled){
         btnSend.classList.add("disable");
@@ -116,6 +132,7 @@ email.addEventListener("keyup",function(e){
         btnSend.classList.remove("disable");
     }   
     emptyCheck()
+    falseCheck()
 });
 
 const messageBox = document.querySelector("#messageBox");
@@ -126,9 +143,14 @@ messageBox.addEventListener("keyup",function(e){
     if(messageBox.value.length<=10){
         warningMessage.textContent="10den boyuk olmalidi";
         btnSend.disabled=true;
+        messageBox.classList.add("false-color");
+        messageBox.classList.remove("true-color");
+        
     }else{
         warningMessage.innerHTML="&nbsp;";
         btnSend.disabled=false;
+        messageBox.classList.remove("false-color");
+        messageBox.classList.add("true-color");
     }
     if(btnSend.disabled){
         btnSend.classList.add("disable");
@@ -136,6 +158,7 @@ messageBox.addEventListener("keyup",function(e){
         btnSend.classList.remove("disable");
     } 
     emptyCheck()
+    falseCheck()
 });
 
 
@@ -143,6 +166,14 @@ function emptyCheck(){
     if(inputName.value==""||email.value==""||messageBox.value==""){
         btnSend.disabled=true;
         btnSend.classList.add("disable");
-
     }
 }
+function falseCheck(){
+    if(inputName.value.length<=3||messageBox.value.length<=10||emailCheck){
+        btnSend.disabled=true;
+        btnSend.classList.add("disable");
+    }
+}
+
+
+

@@ -205,14 +205,21 @@ html, body {
 #homeMain .container .row .main-words .contact .contact-btn:hover {
   background-color: #bf2902;
 }
+#homeMain .container .row .main-words .contact .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 #homeMain .container .row .main-words .contact .social .social-link {
   color: #fff;
-  margin-right: 15px;
+  margin-right: 18px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 #homeMain .container .row .main-words .contact .social .social-link:hover {
   color: #fd562a;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 #homeMain .container .row .main-words .contact .social .social-link i {
   font-size: 24px;
@@ -745,13 +752,16 @@ html, body {
   transition: border 0.3s;
   resize: vertical;
 }
+#contact .container .row .form-container .form #messageBox.false-color {
+  border-color: red;
+  color: red;
+  -webkit-box-shadow: 0 0 10px red;
+          box-shadow: 0 0 10px red;
+}
 #contact .container .row .form-container .form #messageBox.true-color {
   border-color: green;
   -webkit-box-shadow: 0 0 10px green;
           box-shadow: 0 0 10px green;
-}
-#contact .container .row .form-container .form #messageBox:focus {
-  border-color: #fd562a;
 }
 #contact .container .row .form-container .form #messageBox:focus {
   border-color: #fd562a;
@@ -776,4 +786,75 @@ html, body {
 #contact .container .row .form-container .form .btn-send.disable {
   background-color: grey;
   cursor: auto;
+}
+
+.footer {
+  height: 450px;
+  background-color: #302925;
+  padding: 80px 0 100px;
+}
+.footer .container .row .logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.footer .container .row .logo img {
+  width: 100%;
+  height: 100%;
+}
+.footer .container .row .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px;
+}
+.footer .container .row .social .social-link {
+  color: #fff;
+  margin-right: 15px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.footer .container .row .social .social-link:hover {
+  color: #fd562a;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.footer .container .row .social .social-link i {
+  font-size: 24px;
+}
+.footer .container .row .copyright {
+  color: #b0aac0;
+  text-align: center;
+}
+.footer .container .row .copyright .heart {
+  color: red;
+}
+
+.top-scroll {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #222;
+  position: fixed;
+  border-radius: 50%;
+  right: 50px;
+  bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.top-scroll i {
+  font-size: 30px;
+  color: #b0aac0;
 }/*# sourceMappingURL=main.css.map */

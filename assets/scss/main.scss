@@ -150,12 +150,16 @@
                         }
                     }
                     .social{
+                        display: flex;
+                        
                         .social-link{
                             color: #fff;
-                            margin-right: 15px;
+                            margin-right: 18px;
                             transition: all .3s;
                             &:hover{
                                 color: #fd562a;
+                                transform: translateY(-5px);
+
                             }
                             i{
                                 font-size: 24px;
@@ -492,12 +496,14 @@
                         font-size: 16px;
                         transition: border .3s;
                         resize: vertical;
+                        &.false-color{
+                            border-color: red;
+                            color: red;
+                            box-shadow: 0 0 10px red;
+                        }
                         &.true-color{
                             border-color: green;
                             box-shadow: 0 0 10px green;
-                        }
-                        &:focus{
-                            border-color: #fd562a;
                         }
                         &:focus{
                             border-color: #fd562a;
@@ -529,5 +535,70 @@
                 }
             }
         }
+    }
+}
+
+
+.footer{
+    height: 450px;
+    background-color: #302925;
+    padding: 80px 0 100px;
+
+    .container{
+        .row{
+            .logo{
+                display: block;
+                width: 100px;
+                height: 100px;
+                margin: auto;
+                margin-bottom: 30px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .social{
+                display: flex;
+                justify-content: center;
+                margin: 30px;
+                .social-link{
+                    color: #fff;
+                    margin-right: 15px;
+                    transition: all .3s;
+                    &:hover{
+                        color: #fd562a;
+                        transform: translateY(-5px);
+                    }
+                    i{
+                        font-size: 24px;
+                    }
+                }
+            }
+            .copyright{
+                color: #b0aac0;
+                text-align: center;
+                .heart{
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+.top-scroll{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #222;
+    position: fixed;
+    border-radius: 50%;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        font-size: 30px;
+        color: #b0aac0;
     }
 }

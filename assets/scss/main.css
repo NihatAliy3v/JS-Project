@@ -232,6 +232,7 @@ html, body {
   margin-left: auto;
   width: 60%;
   position: relative;
+  height: 400px;
 }
 #homeMain .container .row .person-photo .img::after {
   content: "";
@@ -281,9 +282,12 @@ html, body {
 }
 #homeMain .container .row .person-photo .img img {
   width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 9;
   border-radius: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #homeMain .hero-elements img {
   position: absolute;

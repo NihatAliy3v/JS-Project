@@ -30,8 +30,6 @@ function headerHandler(){
 }
 
 
-
-
 //SKILLS
 
 const btns = document.querySelectorAll(".btn");
